@@ -47,6 +47,7 @@
                 <action id="changePassword" type="changePassword"/>
                 <action id="resetPassword" type="resetPassword"/>
                 <action id="resetRememberMeToken" type="resetRememberMeToken"/>
+                <action id="sendEmail" caption="msg://sendEmail.caption" icon ="SEND"/>
             </actions>
             <columns>
                 <column id="username"/>
@@ -63,6 +64,7 @@
                 <button id="editBtn" action="usersTable.edit"/>
                 <button id="removeBtn" action="usersTable.remove"/>
                 <button id="showRoleAssignmentsBtn" action="usersTable.showRoleAssignments"/>
+                <button id="sendEmailBtn" action="usersTable.sendEmail"/>
                 <popupButton id="additionalActionsBtn" caption="msg://additional" icon="GEARS">
                     <actions>
                         <action id="usersTable.changePassword"/>
