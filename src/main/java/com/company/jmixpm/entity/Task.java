@@ -10,13 +10,19 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @JmixEntity
-@Table(name = "TASK_")
+@Table(name = "TASK_", indexes = {
+        @Index(name = "IDX_TASK__PROJECT", columnList = "PROJECT_ID")
+})
 @Entity(name = "Task_")
 public class Task {
     @JmixGeneratedValue
     @Column(name = "ID", nullable = false)
     @Id
     private UUID id;
+
+    @JoinColumn(name = "PROJECT_ID")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Project project;
 
     @InstanceName
     @Column(name = "NAME", nullable = false)
@@ -33,6 +39,14 @@ public class Task {
 
     @Column(name = "ESTIMATED_EFFORTS")
     private Integer estimatedEfforts;
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
+    }
 
     public Integer getEstimatedEfforts() {
         return estimatedEfforts;

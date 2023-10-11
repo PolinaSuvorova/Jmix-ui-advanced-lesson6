@@ -8,6 +8,7 @@
                     class="com.company.jmixpm.entity.Task">
             <fetchPlan extends="_base">
                 <property name="assignee" fetchPlan="_base"/>
+                <property name="project" fetchPlan="_base"/>
             </fetchPlan>
             <loader id="tasksDl">
                 <query>
@@ -50,6 +51,7 @@
                 <column id="assignee"/>
                 <column id="startDate"/>
                 <column id="estimatedEfforts"/>
+                <column id="project"/>
             </columns>
             <simplePagination/>
             <buttonsPanel id="buttonsPanel"
